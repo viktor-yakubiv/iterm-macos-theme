@@ -1,7 +1,7 @@
 {
 	"light": {
 		"alternateSelectedControlTextColor": [1, 1, 1, 1],
-		"controlAccent": [0, 0.25098, 0.866667, 1],
+		"controlAccentColor": [0, 0.25098, 0.866667, 1],
 		"controlBackgroundColor": [1, 1, 1, 1],
 		"controlColor": [1, 1, 1, 1],
 		"controlTextColor": [0, 0, 0, 0.847059],
@@ -51,7 +51,7 @@
 
 	"dark": {
 		"alternateSelectedControlTextColor": [1, 1, 1, 1],
-		"controlAccent": [0.0901961, 0.454902, 0.854902, 1],
+		"controlAccentColor": [0.0901961, 0.454902, 0.854902, 1],
 		"controlBackgroundColor": [0.12549, 0.12549, 0.12549, 1],
 		"controlColor": [0, 0, 0, 0],
 		"controlTextColor": [1, 1, 1, 1],
