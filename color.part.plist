@@ -1,0 +1,16 @@
+<dict>
+	{% if a -%}
+	<key>Alpha Component</key>
+	<real>{{ a }}</real>
+	{% endif -%}
+	<key>Blue Component</key>
+	<real>{{ b }}</real>
+	{% if space -%}
+	<key>Color Space</key>
+	<string>{{ space }}</string>
+	{% endif -%}
+	<key>Green Component</key>
+	<real>{{ g }}</real>
+	<key>Red Component</key>
+	<real>{{ r }}</real>
+</dict>
