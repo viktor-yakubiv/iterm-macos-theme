@@ -1,0 +1,32 @@
+{
+	"light": {
+		"systemRed": [255, 59, 48],
+		"systemOrange": [255, 149, 0],
+		"systemYellow": [255, 204, 0],
+		"systemGreen": [40, 205, 65],
+		"systemMint": [0, 199, 190],
+		"systemTeal": [89, 173, 196],
+		"systemCyan": [85, 190, 240],
+		"systemBlue": [0, 122, 255],
+		"systemIndigo": [88, 86, 214],
+		"systemPurple": [175, 82, 222],
+		"systemPink": [255, 45, 85],
+		"systemBrown": [162, 132, 94],
+		"systemGray": [142, 142, 147]
+	},
+	"dark": {
+		"systemRed": [255, 69, 58],
+		"systemOrange": [255, 159, 10],
+		"systemYellow": [255, 214, 10],
+		"systemGreen": [50, 215, 75],
+		"systemMint": [102, 212, 207],
+		"systemTeal": [106, 196, 220],
+		"systemCyan": [90, 200, 245],
+		"systemBlue": [10, 132, 255],
+		"systemIndigo": [94, 92, 230],
+		"systemPurple": [191, 90, 242],
+		"systemPink": [255, 55, 95],
+		"systemBrown": [172, 142, 104],
+		"systemGray": [152, 152, 157]
+	}
+}
