@@ -1,5 +1,6 @@
 {
   "devDependencies": {
-    "nunjucks": "^3.2.3"
+    "nunjucks": "^3.2.3",
+    "sass": "^1.57.0"
   }
 }
