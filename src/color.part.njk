@@ -1,0 +1,16 @@
+<dict>
+	{% if alphaComponent != null and alphaComponent < 1 -%}
+	<key>Alpha Component</key>
+	<real>{{ alphaComponent }}</real>
+	{% endif -%}
+	<key>Blue Component</key>
+	<real>{{ blueComponent }}</real>
+	{% if space -%}
+	<key>Color Space</key>
+	<string>{{ colorSpace }}</string>
+	{% endif -%}
+	<key>Green Component</key>
+	<real>{{ greenComponent }}</real>
+	<key>Red Component</key>
+	<real>{{ redComponent }}</real>
+</dict>

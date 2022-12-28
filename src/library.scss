@@ -1,0 +1,68 @@
+@use "sass:color";
+@use "sass:map";
+@use "sass:math";
+@use "sass:meta";
+@use "sass:string";
+
+$theme: () !default;
+
+@function split($string, $separator) {
+		$split-arr: ();
+		$index : string.index($string, $separator);
+		@while $index != null {
+				$item: string.slice($string, 1, $index - 1);
+				$split-arr: append($split-arr, $item);
+				$string: string.slice($string, $index + 1);
+				$index : string.index($string, $separator);
+		}
+		$split-arr: append($split-arr, $string);
+
+		@return $split-arr;
+}
+
+@function get($path) {
+	$result: $theme;
+	@each $key in split($path, ".") {
+		$result: map.get($result, $key);
+	}
+	@return $result;
+}
+
+@function use($color, $alpha: null) {
+	@if meta.type-of($color) == 'string' {
+		$color: get($color);
+	}
+	@if $alpha != null {
+		@return color.change($color, $alpha: $alpha);
+	}
+	@return $color;
+}
+
+@function blend($color, $background, $alpha: null) {
+	$color: use($color);
+	$background: use($background);
+
+	@if $alpha == null {
+		$alpha: color.alpha($color);
+	}
+
+	@if ($alpha == 1) {
+		@return $color;
+	}
+
+	$color: color.change($color, $alpha: 1);
+	$background: color.change($background, $alpha: 1);
+	@return color.mix($background, $color, $alpha * 100%);
+}
+
+@function raw($color) {
+	$red: math.div(color.red($color), 255);
+	$green: math.div(color.green($color), 255);
+	$blue: math.div(color.blue($color), 255);
+	$alpha: color.alpha($color);
+	@return $red, $green, $blue, $alpha;
+}
+
+@function array($color) {
+	@return [#{raw($color)}];
+}

@@ -7,7 +7,7 @@ const env = new nunjucks.Environment(new nunjucks.FileSystemLoader('.'))
 const [templatePath, dataPath] = process.argv.slice(2)
 const data = require('./' + dataPath)
 
-const colorTemplateString = String(fs.readFileSync('color.part.plist')).replaceAll('\n', '\n\t')
+const colorTemplateString = String(fs.readFileSync('src/color.part.njk')).replaceAll('\n', '\n\t')
 const colorTemplate = nunjucks.compile(colorTemplateString)
 
 const renderColor = ([r, g, b, a, s]) => colorTemplate.render({

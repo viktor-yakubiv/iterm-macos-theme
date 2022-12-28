@@ -1,0 +1,81 @@
+@use "theme";
+@use "library" as * with (
+	$theme: theme.$theme,
+);
+
+$lightBackgroundColor: rgb(246, 246, 246); // measured with color meter
+$lightCursorColor: blend("default.light.keyboardFocusIndicatorColor", "default.light.shadowColor");
+$darkBackgroundColor: use("default.dark.textBackgroundColor");
+$darkCursorColor: blend("default.dark.keyboardFocusIndicatorColor", "default.dark.highlightColor");
+
+$theme: (
+	"light": (
+		"backgroundColor": $lightBackgroundColor,
+		"foregroundColor": blend("default.light.labelColor", $lightBackgroundColor),
+		"boldColor": blend("default.light.labelColor", $lightBackgroundColor),
+		"badgeColor": use("default.light.tertiaryLabelColor"),
+		"cursorColor": $lightCursorColor,
+		"cursorGuideColor": use("default.light.keyboardFocusIndicatorColor", $alpha: .15),
+		"cursorTextColor": blend("default.light.highlightColor", $lightCursorColor),
+		"linkColor": blend("default.light.linkColor", $lightBackgroundColor),
+		"selectedTextColor": blend("default.light.selectedTextColor", $lightBackgroundColor),
+		"selectionColor": blend("default.light.selectedTextBackgroundColor", $lightBackgroundColor),
+
+		"blackForegroundColor": use("default.light.highlightColor"),
+		"redForegroundColor": use("accessible.light.systemRed"),
+		"greenForegroundColor": use("accessible.light.systemGreen"),
+		"yellowForegroundColor": use("accessible.light.systemYellow"),
+		"blueForegroundColor": use("accessible.light.systemBlue"),
+		"magentaForegroundColor": use("accessible.light.systemPurple"),
+		"cyanForegroundColor": use("accessible.light.systemTeal"),
+		"whiteForegroundColor": use("default.light.shadowColor"),
+
+		"blackBackgroundColor": blend("default.light.highlightColor", "default.light.shadowColor", $alpha: .85),
+		"redBackgroundColor": use("default.light.systemRed"),
+		"greenBackgroundColor": use("default.light.systemGreen"),
+		"yellowBackgroundColor": use("default.light.systemYellow"),
+		"blueBackgroundColor": use("default.light.systemBlue"),
+		"magentaBackgroundColor": use("default.light.systemPurple"),
+		"cyanBackgroundColor": use("default.light.systemTeal"),
+		"whiteBackgroundColor": blend("default.light.shadowColor", $lightBackgroundColor, $alpha: .85),
+	),
+
+	"dark": (
+		"backgroundColor": $darkBackgroundColor,
+		"foregroundColor": blend("default.dark.textColor", $darkBackgroundColor),
+		"boldColor": blend("default.dark.secondaryLabelColor", $darkBackgroundColor),
+		"badgeColor": use("default.dark.tertiaryLabelColor"),
+		"cursorColor": $darkCursorColor,
+		"cursorGuideColor": use("default.dark.keyboardFocusIndicatorColor", $alpha: .15),
+		"cursorTextColor": use('default.dark.shadowColor'),
+		"linkColor": blend("default.dark.linkColor", $darkBackgroundColor),
+		"selectedTextColor": blend("default.dark.selectedTextColor", $darkBackgroundColor),
+		"selectionColor": blend("default.dark.selectedTextBackgroundColor", $darkBackgroundColor),
+
+		"blackForegroundColor": use($darkBackgroundColor),
+		"redForegroundColor": use("default.dark.systemRed"),
+		"greenForegroundColor": use("default.dark.systemGreen"),
+		"yellowForegroundColor": use("default.dark.systemYellow"),
+		"blueForegroundColor": use("default.dark.systemBlue"),
+		"magentaForegroundColor": use("default.dark.systemPurple"),
+		"cyanForegroundColor": use("default.dark.systemTeal"),
+		"whiteForegroundColor": blend("default.dark.highlightColor", $darkBackgroundColor, $alpha: .85),
+
+		"blackBackgroundColor": blend($darkBackgroundColor, "default.dark.highlightColor", $alpha: .85),
+		"redBackgroundColor": use("accessible.dark.systemRed"),
+		"greenBackgroundColor": use("accessible.dark.systemGreen"),
+		"yellowBackgroundColor": use("accessible.dark.systemYellow"),
+		"blueBackgroundColor": use("accessible.dark.systemBlue"),
+		"magentaBackgroundColor": use("accessible.dark.systemPurple"),
+		"cyanBackgroundColor": use("accessible.dark.systemTeal"),
+		"whiteBackgroundColor": use("default.dark.highlightColor"),
+	),
+);
+
+@each $scheme, $color-map in $theme {
+	#{$scheme} {
+		@each $name, $color in $color-map {
+			#{$name}: #{array($color)};
+		}
+	}
+}
