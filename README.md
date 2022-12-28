@@ -13,7 +13,7 @@ In case you use it with iTerm 3.4 or an older version,
 the default color scheme is **light**.
 This is arbitrary, it could be changed, contributions are welcomed.
 
-[Download](https://raw.githubusercontent.com/viktor-yakubiv/iterm-macos-theme/main/MacOS.itermcolors)
+[Download](https://raw.githubusercontent.com/viktor-yakubiv/macos.itermcolors/main/MacOS.itermcolors)
 
 
 ## Screenshots
