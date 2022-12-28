@@ -1,2 +1,7 @@
-MacOS Default.itermcolors: MacOS.template.plist
-	node build.js MacOS.template.plist macos-default.json > 'MacOS Default.itermcolors'
+%.itermcolors: %.json
+	node build.js src/template.njk '$<' > '$@'
+
+MacOS.json: src/spec.scss
+	@echo '{' > $@
+	npx sass -- $< | sed -Ef src/css2json.sed >> $@
+	@echo '}' >> $@
