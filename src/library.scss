@@ -52,7 +52,7 @@ $theme: () !default;
 
 	$color: color.change($color, $alpha: 1);
 	$background: color.change($background, $alpha: 1);
-	@return color.mix($background, $color, $alpha * 100%);
+	@return color.mix($color, $background, $alpha * 100%);
 }
 
 @function raw($color) {
